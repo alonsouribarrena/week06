@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Index</title>
+  <script src="https://kit.fontawesome.com/1284c12520.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<div class="header">
+  <div class="container">
+    <i class="fa-solid fa-arrow-left"></i>
+    <i class="fa-solid fa-arrow-right"></i>
+    <i class="fa-solid fa-xmark"></i>
+    <i class="fa-solid fa-house"></i>
+    <input id="url-box" type="text" placeholder="https://localhost">
+    <input type="text">
+    <i class="fa-solid fa-magnifying-glass"></i>
+  </div>
+</div>
+<div class="timeline">
+  <h2>Timeline</h2>
+</div>
+<body>
+  <div class="post_your_message">
+    <div>
+    <h3>Post a message</h3>
+    <form action="/create-post" method="post">
+      <br>
+      <textarea name="post" minlength="25"></textarea>
+    </div>
+    <div class="bottom_post">
+      <input class="name_box" type="text" name="userName" placeholder="Your Name" required>
+      <button>Post a message</button>
+    </div>
+    </form>
+  </div>
+  <div class="post_container">
+      <% for (let i = posts.length-1; i > 0 ; i--) { %>
+        <div>
+          <!-- <h3>Title: <%= posts[i].title %></h3> -->
+          <h4><%= posts[i].userName %> - <%= posts[i].created_at %> </h4>
+          <p><%= posts[i].post %></p>
+        </div>
+          <!-- <form action="/delete-post/<%= posts[i]._id %>" method="post">
+            <button>delete</button>
+          </form> -->
+        <% } %>
+        <h4> Hector - 26th August 2023 </h4>
+        <p>This is just a placeholder Post, because now i have use the dotenv and gitignore and you do not have any Database. This is just a placeholder Post, because now i have use the dotenv and gitignore and you do not have any Database. This is just a placeholder Post, because now i have use the dotenv and gitignore and you do not have any Database.</p>
+  </div> 
+  <!--     -->
+</body>
+<footer></footer>
+</html>
